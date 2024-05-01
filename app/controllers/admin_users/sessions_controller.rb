@@ -1,4 +1,4 @@
-module TwoFactorAuth
+module AdminUsers
   class SessionsController < ::Devise::SessionsController
     layout 'active_admin_logged_out'
     helper ::ActiveAdmin::ViewHelpers
@@ -23,13 +23,12 @@ module TwoFactorAuth
 
     private
 
-      def authenticate(admin_user, password, otp_attempt)
-        return [false, "Invalid email"] unless admin_user.present?
-        return [false, "Invalid password"] unless admin_user.valid_password?(password)
-        return [true, ""] unless admin_user.otp_required_for_login
-        return [false, "Invalid authentication code"] unless admin_user.validate_and_consume_otp!(otp_attempt)
-        return [true, ""]
-      end
-
+    def authenticate(admin_user, password, otp_attempt)
+      return [false, "Invalid email"] unless admin_user.present?
+      return [false, "Invalid password"] unless admin_user.valid_password?(password)
+      return [true, ""] unless admin_user.otp_required_for_login
+      return [false, "Invalid authentication code"] unless admin_user.validate_and_consume_otp!(otp_attempt)
+      return [true, ""]
+    end
   end
 end

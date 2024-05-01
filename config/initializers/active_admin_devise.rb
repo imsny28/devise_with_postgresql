@@ -2,17 +2,17 @@ module ActiveAdmin
   module Devise
     def self.controllers
       {
-        sessions: "two_factor_auth/sessions",
+        sessions: "admin_users/sessions",
         passwords: "active_admin/devise/passwords",
         unlocks: "active_admin/devise/unlocks",
         registrations: "active_admin/devise/registrations",
         confirmations: "active_admin/devise/confirmations"
       }
-    end 
-       
+    end
+
     def self.controllers_for_filters
       [
-        ::TwoFactorAuth::SessionsController,
+        ::AdminUsers::SessionsController,
         PasswordsController,
         UnlocksController,
         RegistrationsController,
