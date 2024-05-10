@@ -67,3 +67,6 @@ gem 'devise'
 gem 'devise-two-factor'
 gem 'activeadmin'
 gem 'rqrcode' # QR code generator
+
+gem 'omniauth-azure-activedirectory-v2'
+gem 'omniauth-rails_csrf_protection'
