@@ -1,8 +1,8 @@
 class AdminUser < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :recoverable, :rememberable, :validatable,
-         :two_factor_authenticatable, otp_secret_encryption_key: Devise.secret_key
+  devise :database_authenticatable,
+         :recoverable, :rememberable, :validatable
 
    def self.from_omniauth(auth)
    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
