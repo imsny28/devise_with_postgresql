@@ -61,7 +61,12 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'haml'
 gem 'devise'
 # Devise two factor authentication through TOTP algorithum.
 gem 'devise-two-factor'
 gem 'activeadmin'
+gem 'rqrcode' # QR code generator
+
+gem 'omniauth'
+gem 'omniauth-azure-oauth2'

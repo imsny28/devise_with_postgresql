@@ -1,0 +1,4 @@
+- if current_admin_user
+  = link_to "Logout", logout_path, method: :delete
+- else
+  = link_to "Login with Azure", "/auth/azure_oauth2"
