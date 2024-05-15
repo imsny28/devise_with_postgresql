@@ -117,7 +117,7 @@ ActiveAdmin.setup do |config|
   # roots for each namespace.
   #
   # Default:
-  # config.root_to = 'dashboard#index'
+  config.root_to = 'dashboard#index'
 
   # == Admin Comments
   #
@@ -332,4 +332,7 @@ ActiveAdmin.setup do |config|
   # You can switch to using Webpacker here.
   #
   # config.use_webpacker = true
+
+  config.authentication_method = :authenticate_admin_user!
+  config.current_user_method = :current_admin_user
 end

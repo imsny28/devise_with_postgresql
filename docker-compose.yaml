@@ -1,6 +1,6 @@
 # Run First time to install the rails application
 # docker compose run --no-deps web rails new . --force --database=postgresql
-# docker-compose up --build 
+# docker-compose up --build
 services:
   db:
     image: postgres
@@ -11,6 +11,8 @@ services:
   web:
     build: .
     platform: linux/x86_64
+    tty: true
+    stdin_open: true
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/myapp

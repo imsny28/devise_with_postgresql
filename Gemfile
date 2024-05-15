@@ -65,3 +65,6 @@ gem 'devise'
 # Devise two factor authentication through TOTP algorithum.
 gem 'devise-two-factor'
 gem 'activeadmin'
+
+gem 'omniauth-azure-oauth2'
+gem 'omniauth'
