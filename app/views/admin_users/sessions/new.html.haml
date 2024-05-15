@@ -1,21 +1,4 @@
-%h2
-  = active_admin_application.site_title
-  = title t('active_admin.devise.login.title')
-= form_for(resource, as: resource_name, url: session_path(resource_name), method: :post, html: { class: "formtastic admin" }) do |f|
-  %fieldset.inputs{:style => "background-color: transparent; box-shadow: none;"}
-    %ol
-      %li.input.required.autofocus
-        = f.label :email, "Email", class: "label"
-        = f.email_field :email, autofocus: true
-      %li.input.required.password
-        = f.label :password, "Password", class: "label"
-        = f.password_field :password
-      %li.input
-        = f.label :otp_attempt, "Six-Digit Authentication Code"
-        = f.text_field :otp_attempt
-      
-  %fieldset.actions
-    %ol
-      %li.action.input_action
-        = f.submit "Login"
-= render partial: "active_admin/devise/shared/links"
+- if current_admin_user
+  = link_to "Logout", logout_path, method: :delete
+- else
+  = link_to "Login with Azure", "/auth/azure_oauth2"
