@@ -66,7 +66,6 @@ gem 'devise'
 # Devise two factor authentication through TOTP algorithum.
 gem 'devise-two-factor'
 gem 'activeadmin'
-gem 'rqrcode' # QR code generator
 
 gem 'omniauth'
 gem 'omniauth-azure-oauth2'
