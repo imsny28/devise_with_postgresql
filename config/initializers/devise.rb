@@ -310,4 +310,9 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+
+  config.omniauth :azure_activedirectory_v2,
+                client_id: ENV['AZURE_CLIENT_ID'],
+                client_secret: ENV['AZURE_CLIENT_SECRET'],
+                tenant_id: ENV['AZURE_TENANT_ID']
 end

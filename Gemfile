@@ -68,4 +68,4 @@ gem 'devise-two-factor'
 gem 'activeadmin'
 
 gem 'omniauth'
-gem 'omniauth-azure-oauth2'
+gem 'omniauth-azure-activedirectory-v2'
